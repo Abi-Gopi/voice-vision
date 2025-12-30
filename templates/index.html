@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Voice-Vision Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header class="header">
+      <h1>Voice-Vision Assistant</h1>
+      <p class="sub">Voice commands + camera + OCR for accessibility.</p>
+    </header>
+
+    <section class="card" aria-label="Voice controls">
+      <h2>Voice</h2>
+      <div class="row">
+        <button id="btnStart" class="btn">Start Listening</button>
+        <button id="btnStop" class="btn btnSecondary" disabled>Stop</button>
+        <button id="btnSpeak" class="btn btnSecondary">Speak Last Reply</button>
+      </div>
+
+      <div class="grid">
+        <div>
+          <label for="commandText">Recognized Command</label>
+          <textarea id="commandText" rows="3" placeholder="Your voice command will appear here..."></textarea>
+          <div class="row">
+            <button id="btnSendCommand" class="btn btnSmall">Send Command</button>
+            <button id="btnClear" class="btn btnSecondary btnSmall">Clear</button>
+          </div>
+        </div>
+
+        <div>
+          <label for="replyText">Assistant Reply</label>
+          <textarea id="replyText" rows="3" placeholder="Assistant reply will appear here..." readonly></textarea>
+          <div class="hint" aria-live="polite" id="statusLine">Status: Ready</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Camera vision">
+      <h2>Vision</h2>
+
+      <div class="videoWrap">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" class="hidden"></canvas>
+      </div>
+
+      <div class="row">
+        <button id="btnCamera" class="btn">Enable Camera</button>
+        <button id="btnCapture" class="btn btnSecondary" disabled>Capture</button>
+        <button id="btnOCR" class="btn btnSecondary" disabled>OCR Read</button>
+        <button id="btnDescribe" class="btn btnSecondary" disabled>Describe Scene</button>
+      </div>
+
+      <div>
+        <label for="ocrText">OCR Output</label>
+        <textarea id="ocrText" rows="5" placeholder="Captured OCR text will appear here..." readonly></textarea>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Tip: Say “help”, “read text”, “describe scene”, “what time is it”.</p>
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

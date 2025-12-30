@@ -1,0 +1,72 @@
+:root{
+  --bg:#0b0f17;
+  --card:#121a27;
+  --text:#e8eefc;
+  --muted:#a9b6d3;
+  --border:rgba(255,255,255,.08);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(90,167,255,.14), transparent 60%),
+              radial-gradient(900px 700px at 80% 30%, rgba(126,224,194,.12), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+.container{ max-width: 980px; margin: 0 auto; padding: 22px 14px 40px; }
+.header{ margin-bottom: 16px; }
+h1{ margin:0 0 6px; font-size: 28px; }
+.sub{ margin:0; color: var(--muted); }
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 30%), var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin: 14px 0;
+}
+h2{ margin: 0 0 12px; font-size: 18px; }
+.row{ display:flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 800px){ .grid{ grid-template-columns: 1fr; } }
+label{ display:block; color: var(--muted); font-size: 13px; margin: 4px 0 6px; }
+textarea{
+  width:100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.22);
+  color: var(--text);
+  padding: 12px;
+  outline: none;
+  resize: vertical;
+}
+.btn{
+  border: 1px solid rgba(90,167,255,.4);
+  background: rgba(90,167,255,.18);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover{ filter: brightness(1.08); }
+.btn:disabled{ opacity: .45; cursor:not-allowed; }
+.btnSecondary{
+  border-color: rgba(126,224,194,.35);
+  background: rgba(126,224,194,.14);
+}
+.btnSmall{ padding: 8px 10px; border-radius: 10px; font-size: 13px; }
+.hint{ color: var(--muted); font-size: 13px; }
+.videoWrap{
+  width:100%;
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+  margin-bottom: 10px;
+}
+video{ width:100%; max-height: 360px; display:block; }
+.hidden{ display:none; }
+.footer{ margin-top: 18px; color: var(--muted); font-size: 13px; }
